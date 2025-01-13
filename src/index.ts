@@ -5,6 +5,7 @@ import url from "url";
 import { WebSocket, WebSocketServer } from "ws";
 import { streams } from "./util/stream";
 import "./util/event-loop";
+import { openBrowser } from "./util/puppeteer";
 
 const server = http.createServer();
 
@@ -50,6 +51,10 @@ server.on("request", async (req, res) => {
       }, 2000);
     });
     res.write("testing");
+    res.end();
+  } else if (req.url == "/puppeteer/test") {
+    await openBrowser("https://colorhunt.co/");
+    res.write("puppeteer/test");
     res.end();
   }
   res.end();
