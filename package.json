@@ -12,12 +12,21 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
     "puppeteer": "^24.0.0",
     "typescript": "^5.5.4",
     "ws": "^8.18.0"
   },
   "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/express-session": "^1.18.1",
     "@types/node": "^22.5.0",
+    "@types/passport": "^1.0.17",
+    "@types/passport-google-oauth20": "^2.0.16",
     "@types/ws": "^8.5.12",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2"
