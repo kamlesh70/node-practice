@@ -5,7 +5,7 @@ import session from "express-session";
 import passport from "passport";
 import "./util/OAuth";
 
-const app = express();
+export const app = express();
 
 app.use(
   session({ secret: "secretKey", resave: false, saveUninitialized: true })
