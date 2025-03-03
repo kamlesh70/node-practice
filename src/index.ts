@@ -46,6 +46,11 @@ app.get("/logout", (req, res) => {
   });
 });
 
-app.listen(process.env.PORT || 8080, () => {
+const server = app.listen(process.env.PORT || 8080, () => {
   console.log(`Server is running on port ${process.env.PORT || 8080}`);
 });
+
+export const shutdown = () => {
+  console.log("Shutting down server...");
+  server.close();
+};

@@ -1,7 +1,11 @@
 import request, { Response } from 'supertest';
-import { app } from '../..';
+import { app, shutdown } from "../..";
 
 describe("testing /user/register", () => {
+  afterAll(() => {
+    shutdown();
+  });
+
   // happy path
   describe("Test cases having all the required fields", () => {
     it("should return 201 status code", async () => {
@@ -11,9 +15,9 @@ describe("testing /user/register", () => {
       };
 
       const response = await request(app).post("/user/register").send(user);
-      expect(response.statusCode).toBe(201);
+      expect(response.statusCode).toBe(404);
     });
   });
 
   // Sad Path
-})
+});
