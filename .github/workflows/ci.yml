@@ -1,4 +1,4 @@
-name: node js practice
+name: node js practice ci
 
 on:
   push: 
@@ -12,6 +12,7 @@ env:
 jobs:
   build: 
 
+    name: build and test
     runs-on: ubuntu-latest
 
     steps:

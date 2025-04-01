@@ -1,0 +1,7 @@
+name: Deploy the code
+
+on:
+  workflow_run:
+    workflows: ["node js practice ci"]
+    types:
+      - completed
